@@ -1,0 +1,22 @@
+<!-- In review-form.component.html -->
+<app-navbar></app-navbar>
+<div class="formContainer">
+  <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+    <div class="form-group">
+      <label for="review">Review</label>
+      <textarea id="review" formControlName="review" rows="4" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <select id="rating" formControlName="rating" class="form-control">
+        <option value="" disabled>Select a rating</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!reviewForm.valid">Submit Review</button>
+  </form>
+</div>

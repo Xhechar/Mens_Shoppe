@@ -1,0 +1,82 @@
+<head>
+
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+</head>
+
+<body>
+  <app-navbar></app-navbar>
+  <div class="login">
+    <div class="form-container" style="width: 40%;">
+      <p style="text-align: center; font-weight: 500; font-size: 20px;">Welcome to Men'SHOPIE</p>
+      <p style="text-align: center; font-size: 25px; padding: 10px;">CREATE AN ACCOUNT</p>
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" formControlName="name" placeholder="Enter your name">
+          <div
+            *ngIf="signupForm.get('name')?.invalid && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)"
+            class="error-message">
+            <div *ngIf="signupForm.get('name')?.errors?.['required']">Name is required.</div>
+            <div *ngIf="signupForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters long.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" formControlName="phoneNumber" placeholder="Enter your phone number">
+          <div
+            *ngIf="signupForm.get('phoneNumber')?.invalid && (signupForm.get('phoneNumber')?.dirty || signupForm.get('phoneNumber')?.touched)"
+            class="error-message">
+            <div *ngIf="signupForm.get('phoneNumber')?.errors?.['required']">Phone number is required.</div>
+            <div *ngIf="signupForm.get('phoneNumber')?.errors?.['pattern']">Please enter a valid phone number.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="email" formControlName="email" placeholder="Enter your email">
+          <div
+            *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)"
+            class="error-message">
+            <div *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</div>
+            <div *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email address.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" formControlName="password" placeholder="Enter your password">
+          <div
+            *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)"
+            class="error-message">
+            <div *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</div>
+            <div *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters long.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
+          <div
+            *ngIf="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.dirty || signupForm.get('confirmPassword')?.touched)"
+            class="error-message">
+            <div *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Confirm password is required.</div>
+            <div *ngIf="signupForm.get('confirmPassword')?.errors?.['mustMatch']">Passwords must match.</div>
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+      </form>
+
+      <a>Already have an account? Login Now</a>
+    </div>
+    <video autoplay muted loop id="backgroundVideo">
+      <source src="/assets/mp4/mensuits.mp4" type="video/mp4">
+    </video>
+
+    <P style="color :white; position: absolute; margin-right: -1250px; margin-bottom: -300px; ">FOR Men By Men</P>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('backgroundVideo');
+        video.muted = true;
+      });
+    </script>
+  </div>
+</body>

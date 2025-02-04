@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Abel', sans-serif;
+}
+
+main{
+  margin-left: 60px;
+}
+
+.dir{
+  margin: 20px 0;
+}
+
+.container{
+  display: flex;
+  gap: 30px;
+  /* background-color: aquamarine; */
+}
+
+.cartTop{
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-size: 25px;
+}
+
+.cartItems{
+  padding: 20px;
+  border: 1px solid #cdcdcd;
+  width: 100vw;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productView{
+  display: flex;
+  padding: 20px;
+  width: 40vw;
+  border-bottom: 1px solid #cdcdcd;
+  border-left: 1px solid #cdcdcd;
+  /* background-color: antiquewhite; */
+
+}
+
+.details{
+  width: 100%;
+}
+
+.topDelete{
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+.delete img:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.size{
+  margin: 10px 0;
+}
+.price{
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.amount {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 5px;
+  gap: 20px;
+  background-color: #F0F0F0;
+  border-radius: 50px;
+}
+
+span{
+  cursor: pointer;
+}
+.parent{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.key{
+  font-size: 19px;
+}
+
+
+.reviewButton{
+  padding: 10px 15px;
+  border-radius: 30px;
+}
+.reviewButton:hover{
+  box-shadow: 0 0 30px rgba(126, 126, 126, 0.617);
+}
+.reviewForm{
+  /* background-color: azure; */
+  width: 50%;
+  height: 350px;
+  border-radius: 25px;
+  border: 1px solid #cdcdcd;
+}
+.rvw{
+  text-align: center;
+  font-size: 25px;
+}
+
+
+
+

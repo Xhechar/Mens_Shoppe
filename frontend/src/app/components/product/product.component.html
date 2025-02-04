@@ -1,0 +1,338 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+,
+
+<body>
+  <app-navbar></app-navbar>
+  <div class="dir">
+    <span>Home</span> > <span> Shop</span> > <span>Selected product</span>
+  </div>
+
+  <div class="productView">
+    <div class="image">
+      <div class="subImages">
+        <img style="height: 100px;"
+          src={{this.product?.images}} alt="">
+        <img style="height: 100px;"
+        src={{this.product?.images}} alt="">
+        <img style="height: 100px;"
+        src={{this.product?.images}} alt="">
+      </div>
+      <img   src={{this.product?.images}} alt="">
+    </div>
+
+    <div class="details">
+
+      <div class="name">
+       {{this.product?.name}}
+      </div>
+
+      <div class="rating">
+        <div class="stars">
+          <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+        </div>
+        <div class="rate">4.5/5</div>
+      </div>
+
+      <div class="price">
+        Ksh. {{this.product?.price}}
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; width: 100%;" class="descripton">
+       {{this.product?.description}}
+      </div>
+
+      <div class="toCart">
+        <div class="amount">
+          <button class="decrement" (click)="changeQuantity(-1)">-</button>
+          <span id="quantity">{{quantity}}</span>
+          <button class="increment" (click)="changeQuantity(1)">+</button>
+        </div>
+        <div class="cartButton">
+          <button class="addCart">
+            <img style="height: 30px;" src="/assets/icons/cartAdd.gif" alt="">
+            <div class="ttxt">Add to cart</div>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <!-- Product view ends here -->
+
+  <!-- Reviews start hee -->
+  <div class="reviewSection">
+    <div class="txtReview">
+      Rating & Review
+    </div>
+
+    <div class="reviews">
+
+      <!--one Review  -->
+      <div class="review">
+        <div class="icons">
+          <div class="stars">
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          </div>
+
+          <div class="more">
+            <img style="height: 25px;" src="/assets/icons/more.png" alt="">
+          </div>
+        </div>
+
+        <div class="userName">
+          <div class="namee">Samantha D.</div>
+          <img style="height: 20px;" src="/assets/icons/verified.gif" alt="">
+        </div>
+
+        <div class="content">
+          "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+          designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+        </div>
+
+        <div class="time">
+          Posted on. August 14 2024
+        </div>
+      </div>
+      <!-- one  Review -->
+
+      <!--one Review  -->
+      <div class="review">
+        <div class="icons">
+          <div class="stars">
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          </div>
+
+          <div class="more">
+            <img style="height: 25px;" src="/assets/icons/more.png" alt="">
+          </div>
+        </div>
+
+        <div class="userName">
+          <div class="namee">Samantha D.</div>
+          <img style="height: 20px;" src="/assets/icons/verified.gif" alt="">
+        </div>
+
+        <div class="content">
+          "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+          designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+        </div>
+
+        <div class="time">
+          Posted on. August 14 2024
+        </div>
+      </div>
+      <!-- one  Review -->
+
+
+      <!--one Review  -->
+      <div class="review">
+        <div class="icons">
+          <div class="stars">
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          </div>
+
+          <div class="more">
+            <img style="height: 25px;" src="/assets/icons/more.png" alt="">
+          </div>
+        </div>
+
+        <div class="userName">
+          <div class="namee">Samantha D.</div>
+          <img style="height: 20px;" src="/assets/icons/verified.gif" alt="">
+        </div>
+
+        <div class="content">
+          "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+          designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+        </div>
+
+        <div class="time">
+          Posted on. August 14 2024
+        </div>
+      </div>
+      <!-- one  Review -->
+
+
+      <!--one Review  -->
+      <div class="review">
+        <div class="icons">
+          <div class="stars">
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          </div>
+
+          <div class="more">
+            <img style="height: 25px;" src="/assets/icons/more.png" alt="">
+          </div>
+        </div>
+
+        <div class="userName">
+          <div class="namee">Samantha D.</div>
+          <img style="height: 20px;" src="/assets/icons/verified.gif" alt="">
+        </div>
+
+        <div class="content">
+          "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+          designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+        </div>
+
+        <div class="time">
+          Posted on. August 14 2024
+        </div>
+      </div>
+      <!-- one  Review -->
+
+
+      <!--one Review  -->
+      <div class="review">
+        <div class="icons">
+          <div class="stars">
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          </div>
+
+          <div class="more">
+            <img style="height: 25px;" src="/assets/icons/more.png" alt="">
+          </div>
+        </div>
+
+        <div class="userName">
+          <div class="namee">Samantha D.</div>
+          <img style="height: 20px;" src="/assets/icons/verified.gif" alt="">
+        </div>
+
+        <div class="content">
+          "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+          designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+        </div>
+
+        <div class="time">
+          Posted on. August 14 2024
+        </div>
+      </div>
+      <!-- one  Review -->
+
+
+      <!--one Review  -->
+      <div class="review">
+        <div class="icons">
+          <div class="stars">
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+            <div class="star"><img style="height: 20px;" src="/assets/icons/star.png" alt=""></div>
+          </div>
+
+          <div class="more">
+            <img style="height: 25px;" src="/assets/icons/more.png" alt="">
+          </div>
+        </div>
+
+        <div class="userName">
+          <div class="namee">Samantha D.</div>
+          <img style="height: 20px;" src="/assets/icons/verified.gif" alt="">
+        </div>
+
+        <div class="content">
+          "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow
+          designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+        </div>
+
+        <div class="time">
+          Posted on. August 14 2024
+        </div>
+      </div>
+      <!-- one  Review -->
+
+    </div>
+  </div>
+
+  <!-- Review ends here -->
+
+
+  <!-- Similar Products start here -->
+
+  <div class="similarProducts">
+
+    <div class="txtP">
+      Similar Products
+    </div>
+    <div class="similarList">
+
+      <div class="product">
+        <img style="height: 260px;" src="/assets/imgs/darkgrey.webp" alt="">
+        <div class="productName">
+          Deep gray masterpiece
+        </div>
+        <div class="ratingg">
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="rate" style="font-size: 19px;">4.5/5</div>
+        </div>
+        <div class="productPrice">
+          Ksh. 34,000
+        </div>
+      </div>
+
+      <div class="product">
+        <img style="height: 260px;" src="/assets/imgs/darkgrey.webp" alt="">
+        <div class="productName">
+          Deep gray masterpiece
+        </div>
+        <div class="ratingg">
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="rate" style="font-size: 19px;">4.5/5</div>
+        </div>
+        <div class="productPrice">
+          Ksh. 34,000
+        </div>
+      </div>
+
+      <div class="product">
+        <img style="height: 260px;" src="/assets/imgs/darkgrey.webp" alt="">
+        <div class="productName">
+          Deep gray masterpiece
+        </div>
+        <div class="ratingg">
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 18px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="rate" style="font-size: 19px;">4.5/5</div>
+        </div>
+        <div class="productPrice">
+          Ksh. 34,000
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</body>

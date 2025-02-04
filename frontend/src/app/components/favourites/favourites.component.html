@@ -1,0 +1,54 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <app-navbar></app-navbar>
+  <main>
+    <div class="dir">
+      <span>Home</span> > <span>Cart</span> > <span>Wishlist</span>
+      <div class="cartTop">
+        <div class="ctxt" style="text-align: center; width: 100%;">
+         WishList
+        </div>
+      </div>
+      <div class="container">
+
+        <div class="cartItems">
+          <!-- One Product -->
+          <div class="productView" *ngFor="let product of products">
+            <div class="image">
+              <img style="height:120px;"
+                src= "{{product.image}}"
+                alt="">
+            </div>
+            <div class="details">
+              <div class="topDelete">
+                <div class="name">
+                  {{product.name}}
+                </div>
+                <div class="review">
+                  <button class="reviewButton">Review</button>
+                </div>
+              </div>
+
+              <div class="size">
+
+              </div>
+
+              <div class="quantity">
+                Quantity: {{product.quantity}}
+              </div>
+              <div class="size">
+                Size: {{product.size}}
+              </div>
+            </div>
+          </div>
+          <!-- ?End of inidividual cart item -->
+        </div>
+        <!-- End of cart items -->
+
+
+
+
+      </div>

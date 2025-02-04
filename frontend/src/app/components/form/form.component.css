@@ -1,0 +1,95 @@
+.form-holder {
+  width: 100%;
+  padding: 2%;
+  display: grid;
+  row-gap: 2%;
+  grid-template-rows: auto auto;
+  min-height: 100vh;
+}
+
+.form-and-image {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  column-gap: 2%;
+  grid-template-columns: 60% 38%; /* Adjusted for consistency */
+}
+
+.form, form {
+  width: 100%;
+  height: auto; /* Changed to auto for flexibility */
+  display: grid;
+  grid-template-rows: repeat(5, auto); /* Changed for dynamic sizing */
+  gap: 20px; /* More consistent spacing */
+}
+
+label {
+  font-weight: 500; /* Slightly less bold for a cleaner look */
+  margin-bottom: 5px; /* Space between label and input */
+}
+
+input, textarea {
+  width: 100%; /* Full width without subtracting for padding */
+  border: 1px solid #ccc; /* Lighter border for a cleaner look */
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+textarea {
+  height: auto; /* Adjust height based on content */
+  min-height: 75px; /* Minimum height */
+}
+
+.description, .price-and-size div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-and-size {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* Consistent spacing */
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* Consistent spacing */
+  padding: 0 2%;
+}
+
+.buttons button {
+  padding: 10px 15px; /* Consistent padding */
+  font-weight: 600;
+  border-radius: 5px; /* Rounded corners for a modern look */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.create, .cancel {
+  background-color: #f0f0f0; /* Light background for neutral buttons */
+}
+
+.update {
+  background-color: #4CAF50; /* Green for update */
+  color: white; /* White text for readability */
+}
+
+.delete {
+  background-color: #f44336; /* Red for delete */
+  color: white; /* White text for readability */
+}
+
+.image-holder, .gallery, .image-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image img, .image-placeholder img {
+  border-radius: 10px;
+  object-fit: cover;
+}

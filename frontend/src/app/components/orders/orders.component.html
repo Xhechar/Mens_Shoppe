@@ -1,0 +1,75 @@
+<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Name</th>
+      <th>Product</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Quantity</th>
+      <th>Amount Paid</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+    
+      <td>{{ order.name }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.date }}</td>
+      <td>
+        <span [ngClass]="{'delivered': order.status === 'delivered', 'pending': order.status === 'pending'}">
+          {{ order.status }}
+        </span>
+      </td>
+      <td>{{ order.quantity }}</td>
+      <td>{{ order.amountPaid }}</td>
+      <td class="action-buttons">
+        <button class="icon-btn more-actions">
+          <img src="/assets/icons/actions.png" alt="More actions">
+        </button>
+        <div class="dropdown-actions">
+          <button class="icon-btn view-details" (click)="showPopup(order)">
+            <img src="/assets/icons/search.gif" alt="View details">
+            <span>View Details</span>
+          </button>
+
+          <button class="icon-btn set-delivered">
+            <img src="/assets/icons/delivery.png" alt="Set to delivered">
+            <span>Complete Delivery</span>
+          </button>
+        </div>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<!-- PPoppup element on view order -->
+<div class="overlay" *ngIf="selectedOrder" (click)="closePopup()">
+  <div class="popup" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closePopup()">×</button>
+    <div class="popup-content">
+      <div class="profile-section">
+        <img [src]="selectedOrder.clientProfile" alt="Client Profile" class="popup-profile-img">
+        <h2>{{ selectedOrder.name }}</h2>
+      </div>
+      <div class="product-section">
+
+
+        <!-- uncomment after updat of linkings -->
+        <!-- <img [src]="selectedOrder.productImage" alt="Product Image" class="popup-product-img"> -->
+        <h3>{{ selectedOrder.product }}</h3>
+      </div>
+      <div class="details-section">
+        <p><strong>Quantity:</strong> {{ selectedOrder.quantity }}</p>
+        <p><strong>Status:</strong> <span [ngClass]="{'delivered': selectedOrder.status === 'delivered', 'pending': selectedOrder.status === 'pending'}">{{ selectedOrder.status }}</span></p>
+        <p><strong>Amount Paid:</strong> {{ selectedOrder.amountPaid }}</p>
+        <p><strong>Date of Purchase:</strong> {{ selectedOrder.date }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

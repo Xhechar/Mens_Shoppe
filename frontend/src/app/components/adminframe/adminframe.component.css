@@ -1,0 +1,152 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  height: 10000px;
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav{
+  margin-top: 50px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 24px;
+
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li:hover {
+  background-color: #555;
+}
+
+.main-content {
+  flex: 1;
+  /* padding: 20px; */
+}
+
+header {
+  background-color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.stats{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 20px;
+  gap: 20px;
+
+}
+
+.dashboard {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 30%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card-header {
+  margin-bottom: 10px;
+}
+
+.chart-section {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.chart-header {
+  margin-bottom: 10px;
+
+}
+.components{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+
+}
+.navigateTo{
+  /* background-color: #e9e9e9; */
+  width: 94%;
+}
+.navigateDashboard{
+  width: 100%;
+  /* background-color: #ccc; */
+}

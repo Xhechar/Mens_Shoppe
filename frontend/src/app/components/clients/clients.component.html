@@ -1,0 +1,24 @@
+<p>clients works!</p>
+
+<div class="main">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Number of Orders</th>
+        <th>Registration Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.name }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.phoneNumber }}</td>
+        <td>{{ client.numberOfOrders }}</td>
+        <td>{{ client.registrationDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,91 @@
+<div class="form-holder">
+  <div class="form-and-image">
+    <div class="form">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="description">
+          <label for="product-name">Product Name</label>
+          <input type="text" id="product-name" [(ngModel)]="name" name="name" placeholder="product name ..." required>
+        </div>
+
+        <div class="description">
+          <label for="description">Description</label>
+          <textarea id="description" [(ngModel)]="description" name="description" placeholder="provide description" required></textarea>
+        </div>
+
+        <div class="description">
+          <label for="category">Category</label>
+          <select id="category" [(ngModel)]="category" name="category" required>
+            <option value="" disabled selected>Select category...</option>
+            <option value="T-shirt">T-shirt</option>
+            <option value="Suit">Suit</option>
+            <option value="Jeans">Jeans</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Hoodie">Hoodie</option>
+            <option value="Shirt">Shirt</option>
+          </select>
+        </div>
+
+
+        <div class="description">
+          <label for="quantity">Stock Quantity</label>
+          <input type="number" id="quantity" [(ngModel)]="quantity" name="quantity" placeholder="0" required>
+          <label for="maxStock">Stock Limit</label>
+          <input type="number" id="maxStock" [(ngModel)]="stockLimit" name="stockLimit" placeholder="stockLimit" required>
+        </div>
+
+        <div class="price-and-size">
+          <div class="price-holder">
+            <label for="price">Regular Price</label>
+            <input class="small" type="number" id="price" [(ngModel)]="price" name="price" placeholder="Ksh: 0" required>
+          </div>
+
+          <div>
+            <label for="size">Size</label>
+            <input class="small" type="text" id="size" [(ngModel)]="size" name="size" placeholder="Large" required>
+          </div>
+          <div class="form-group">
+            <label for="imageUpload">Product Images</label>
+            <input type="file" class="form-control-file" id="imageUpload" name="imageUpload" (change)="onFileSelected($event)" multiple>
+          </div>
+
+        </div>
+      </form>
+    </div>
+    <div class="image-holder">
+      <div class="image">
+        <ng-container *ngIf="product && product.images.length > 0; else noImageAvailable">
+          <img [src]="product.images[0]" [alt]="product.name" style="height: 80px;">
+        </ng-container>
+        <ng-template #noImageAvailable>
+          <img style="height: 400px; margin-left: 20px;" src="/assets/imgs/suitsuit.jpg" alt="No Image Available">
+        </ng-template>
+      </div>
+      <div class="gallery">
+        <h3>Product Gallery</h3>
+        <div class="image-placeholder" appDropzone (filesSelected)="onSelect($event)">
+          <img style="height: 50px; width: 50px;" src="/assets/icons/dropzone.gif" alt="Upload Icon">
+          <p>Drop your images here, or click to browse. JPEG, PNG are allowed.</p>
+        </div>
+        <div class="uploaded-images">
+          <div *ngFor="let file of files; let i = index" class="uploaded-image">
+            <img [src]="file | fileToUmageUrl" [alt]="'Uploaded Image ' + i">
+            <button (click)="onRemove(file)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="create" type="button" (click)="onSubmit()" *ngIf="formMode === 'create'">CREATE</button>
+      <button class="update" type="button" (click)="onSubmit()" *ngIf="formMode === 'update'">UPDATE</button>
+      <!-- <button class="delete" type="button" *ngIf="formMode === 'update'" (click)="onDelete()">SOFT DELETE</button> -->
+      <button class="cancel" type="button" (click)="onCancel()">CANCEL</button>
+    </div>
+
+    <!-- Dropzone Configuration -->
+    <div class="dropzone" id="my-awesome-dropzone">
+      <div class="fallback">
+        <input name="file" type="file" multiple />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="sidebar">
+    <div class="logo">
+      Men'SHOPIE
+    </div>
+    <nav>
+      <ul>
+        <li (click)="selectOption('dashboard')">
+          <img style="height: 25px;" src="/assets/icons/dash.png" alt="">
+          <a>Dashboard</a>
+        </li>
+        <li (click)="selectOption('settings')">
+          <img style="height: 25px;" src="/assets/icons/addnew.png" alt="">
+          <a>New Product</a>
+        </li>
+        <li (click)="selectOption('products')">
+          <img style="height: 25px;" src="/assets/icons/items.png" alt="">
+          <a>Products</a>
+        </li>
+        <li (click)="selectOption('orders')">
+          <img style="height: 25px;" src="/assets/icons/list.png" alt="">
+          <a>Orders</a>
+        </li>
+        <li (click)="selectOption('customers')">
+          <img style="height: 25px;" src="/assets/icons/clients.png" alt="">
+          <a>Clients</a>
+        </li>
+        <li (click)="selectOption('settings')">
+          <img style="height: 25px;" src="/assets/icons/settings.png" alt="">
+          <a>Settings</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main-content">
+    <!-- Stats section -->
+    <div class="stats">
+      <div class="card" style="background-color: #f7e7d0;">
+        <div>
+          <div class="card-header">
+            <p style="font-size: 18px;">Total Orders</p>
+          </div>
+          <div class="card-body">
+            <p style="color: #ec981b; font-size: 25px;">{{ totalOrders }}</p>
+          </div>
+        </div>
+        <div class="icon">
+          <img src="/assets/icons/sales.png" alt="">
+        </div>
+      </div>
+
+      <div style="background-color: #FCCFD7;" class="card">
+        <div>
+          <div class="card-header">
+            <p>Pending Deliveries</p>
+          </div>
+          <div class="card-body">
+            <p style="color: #f62b50; font-size: 25px;">{{ pendingOrders }}</p>
+          </div>
+        </div>
+        <div class="icon">
+          <img src="/assets/icons/pendingDelivery.png" alt="">
+        </div>
+      </div>
+
+      <div style="background-color: #CFF9FC;" class="card">
+        <div>
+          <div class="card-header">
+            <p>Completed Deliveries</p>
+          </div>
+          <div class="card-body">
+            <p style="color: #15deec; font-size: 25px;">{{ completedOrders }}</p>
+          </div>
+        </div>
+        <div class="icon">
+          <img src="/assets/icons/delivery.png" alt="">
+        </div>
+      </div>
+
+      <div style="background-color: #DCEFCC;" class="card">
+        <div>
+          <div class="card-header">
+            <p>Total Earnings</p>
+          </div>
+          <div class="card-body">
+            <p style="color: #59be0c; font-size: 25px;">{{ totalEarnings }}</p>
+          </div>
+        </div>
+        <div class="icon">
+          <img src="/assets/icons/icons8-money-80.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <!-- Components section -->
+    <div class="components">
+      <div class="navigateTo">
+        <div class="navigateDashboard" *ngIf="selectedOption === 'dashboard'">
+          <app-admin-visuals></app-admin-visuals>
+        </div>
+        <div class="navigateToProducts" *ngIf="selectedOption === 'products'">
+          <app-products-admin (editProductEvent)="handleEditProductEvent($event)"></app-products-admin>
+        </div>
+        <div class="navigateToOrders" *ngIf="selectedOption === 'orders'">
+          <app-orders></app-orders>
+        </div>
+        <div class="navigateToClients" *ngIf="selectedOption === 'customers'">
+          <app-clients></app-clients>
+        </div>
+        <div class="naviateToForm" *ngIf="selectedOption === 'settings'">
+          <app-form [product]="editProduct" (cancelEdit)="handleCancelEdit()"></app-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,173 @@
+
+  <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+
+<body>
+  <main>
+    <app-navbar></app-navbar>
+    <div class="dir">
+      <span>Home</span> > <span>Shop</span> > <span>Cart</span>
+      <div class="cartTop">
+        <div class="ctxt">
+          Your Cart
+        </div>
+        <div class="cartIcon">
+          <img style="height: 30px;" src="/assets/icons/cartcart.png" alt="">
+        </div>
+      </div>
+      <div class="container">
+
+      <div class="cartItems">
+
+        <!-- One Product -->
+        <div class="productView">
+          <div class="image">
+            <img style="height:120px;"
+              src="/assets/imgs/men-s-casual-t-shirshort-sleeve-o-neck-t-shirt-lestyleparfait-kenya-t-shirts-1.webp"
+              alt="">
+          </div>
+          <div class="details">
+            <div class="topDelete">
+              <div class="name">
+                Casual short sleeve T-Shirt
+              </div>
+              <div class="cartButton">
+                <button class="delete">
+                  <img style="height: 30px;" src="/assets/icons/delete.png" alt="">
+                </button>
+              </div>
+            </div>
+
+            <div class="size">
+              Size: Large
+            </div>
+            <div class="price">
+              <div class="ammount">
+                Ksh. 2,600
+              </div>
+              <div class="toCart">
+                <div class="amount">
+                  <button class="decrement" (click)="changeQuantity(-1)">-</button>
+                  <span id="quantity">{{quantity}}</span>
+                  <button class="increment" (click)="changeQuantity(1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- One Product -->
+        <div class="productView">
+          <div class="image">
+            <img style="height:120px;"
+              src="/assets/imgs/men-s-casual-t-shirshort-sleeve-o-neck-t-shirt-lestyleparfait-kenya-t-shirts-1.webp"
+              alt="">
+          </div>
+          <div class="details">
+            <div class="topDelete">
+              <div class="name">
+                Casual short sleeve T-Shirt
+              </div>
+              <div class="cartButton">
+                <button class="delete">
+                  <img style="height: 30px;" src="/assets/icons/delete.png" alt="">
+                </button>
+              </div>
+            </div>
+
+            <div class="size">
+              Size: Large
+            </div>
+            <div class="price">
+              <div class="ammount">
+                Ksh. 2,600
+              </div>
+              <div class="toCart">
+                <div class="amount">
+                  <button class="decrement" (click)="changeQuantity(-1)">-</button>
+                  <span id="quantity">{{quantity}}</span>
+                  <button class="increment" (click)="changeQuantity(1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- One Product -->
+        <div class="productView">
+          <div class="image">
+            <img style="height:120px;"
+              src="/assets/imgs/men-s-casual-t-shirshort-sleeve-o-neck-t-shirt-lestyleparfait-kenya-t-shirts-1.webp"
+              alt="">
+          </div>
+          <div class="details">
+            <div class="topDelete">
+              <div class="name">
+                Casual short sleeve T-Shirt
+              </div>
+              <div class="cartButton">
+                <button class="delete">
+                  <img style="height: 30px;" src="/assets/icons/delete.png" alt="">
+                </button>
+              </div>
+            </div>
+
+            <div class="size">
+              Size: Large
+            </div>
+            <div class="price">
+              <div class="ammount">
+                Ksh. 2,600
+              </div>
+              <div class="toCart">
+                <div class="amount">
+                  <button class="decrement" (click)="changeQuantity(-1)">-</button>
+                  <span id="quantity">{{quantity}}</span>
+                  <button class="increment" (click)="changeQuantity(1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- ?End of inidividual cart item -->
+      </div>
+      <!-- End of cart items -->
+
+
+      <!-- Satrt of price calculations -->
+       <div class="orderSummary">
+
+        <div class="txtSummary">Order Summary</div>
+        <div class="parent">
+          <div class="key">Subtotal</div>
+          <div class="amnt">Ksh. 67,000</div>
+        </div>
+
+        <div class="parent">
+          <div class="key">Discount</div>
+          <div class="discount" >Ksh. -300</div>
+        </div>
+
+        <div class="parent" style="border-bottom: 1px solid #cdcdcd; padding-bottom: 15px;">
+          <div class="key">Delivery Fee</div>
+          <div class="amnt">Ksh. 200</div>
+        </div>
+
+        <div class="parent">
+          <div class="keyp">Total</div>
+          <div class="amntT">Ksh. 6,600</div>
+        </div>
+
+        <div class="buttonContainer">
+          <button class="checkout">
+            <div class="textb">Go to Checkout</div>
+            <img src="/assets/icons/checkout.png" alt="">
+          </button>
+        </div>
+       </div>
+      </div>
+
+    </div>
+  </main>
+</body>

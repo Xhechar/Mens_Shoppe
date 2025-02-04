@@ -1,0 +1,121 @@
+<app-navbar></app-navbar>
+
+<div class="dir">
+<span>  <span class="dirs" routerLink="/">Home</span> > <span class="dirs">Shop</span></span>
+<div class="searchBar"></div>
+</div>
+
+<div class="main">
+  <!-- Sidebar start -->
+  <div class="sidebar">
+    <div class="innerSidebar">
+      <!-- Main sidebar -->
+      <div class="top1f">
+        <div class="filters">Filters</div>
+        <div class="iconFilter"><img style="height: 30px;" src="/assets/icons/icons8-control.gif" alt=""></div>
+      </div>
+
+      <!-- Filtering by cloth type -->
+      <div class="types">
+        <div class="type">
+          <div class="tshirt">Tshirt</div>
+          <div class="clothTypes"><img style="height: 22px;" src="/assets/icons/rightCicon.png" alt=""></div>
+        </div>
+
+        <div class="type">
+          <div class="short">Suit</div>
+          <div class="clothTypes"><img style="height: 22px;" src="/assets/icons/rightCicon.png" alt=""></div>
+        </div>
+
+        <div class="type">
+          <div class="jeans">Jeans</div>
+          <div class="clothTypes"><img style="height: 22px;" src="/assets/icons/rightCicon.png" alt=""></div>
+        </div>
+
+        <div class="type">
+          <div class="shoes">Shoes</div>
+          <div class="clothTypes"><img style="height: 22px;" src="/assets/icons/rightCicon.png" alt=""></div>
+        </div>
+
+        <div class="type">
+          <div class="hoodie">Hoodie</div>
+          <div class="clothTypes"><img style="height: 22px;" src="/assets/icons/rightCicon.png" alt=""></div>
+        </div>
+
+        <div class="type">
+          <div class="shirts">Shirts</div>
+          <div class="clothTypes"><img style="height: 22px;" src="/assets/icons/rightCicon.png" alt=""></div>
+        </div>
+
+      </div>
+      <!-- Cloth type ends here -->
+
+      <!-- Filter by price -->
+      <div class="wrapper">
+        <div class="byPrice">
+          Price (Ksh.)
+        </div>
+
+        <div class="slider">
+          <div class="progress" [style.left.%]="(minPrice / 100000) * 100"
+            [style.right.%]="100 - (maxPrice / 100000) * 100"></div>
+        </div>
+
+        <div class="range-input">
+          <input type="range" class="range-min" min="0" max="100000" [(ngModel)]="minPrice" (input)="updatePriceRange()"
+            step="100">
+          <input type="range" class="range-max" min="0" max="100000" [(ngModel)]="maxPrice" (input)="updatePriceRange()"
+            step="100">
+        </div>
+        <div class="price-input">
+          <div class="field">
+            <input style="background-color: transparent;" type="number" class="input-min" [(ngModel)]="minPrice"
+              (input)="updatePriceRange()">
+          </div>
+          <div class="separator">-</div>
+          <div class="field">
+            <input style="background-color: transparent;" type="number" class="input-max" [(ngModel)]="maxPrice"
+              (input)="updatePriceRange()">
+          </div>
+        </div>
+      </div>
+      <!-- Filter by price ends here -->
+
+      <!-- Filter by size -->
+      <div class="bySize">
+        <div class="size">Size</div>
+        <div class="sizes">
+          <div class="sizze">Small</div>
+          <div class="sizze">Medium</div>
+          <div class="sizze">Large</div>
+          <div class="sizze">XL</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Products list start -->
+
+  <div class="productsContainer">
+    <h2 class="title" style="padding: 0 40px; text-align: star; margin-top: -40px;">Clothing Collection</h2>
+    <div class="products">
+      <div class="product" *ngFor="let product of products" (click)="viewProduct(product.id)">
+        <img style="height: 260px;" [src]="product.images[0]" alt="">
+        <div class="productName">
+          {{ product.name }}
+        </div>
+        <div class="rating">
+          <div class="star"><img style="height: 22px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 22px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 22px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="star"><img style="height: 22px;" src="/assets/icons/star.png" alt=""></div>
+          <div class="rate">4.5/5</div>
+        </div>
+        <div class="productPrice">
+          Ksh. {{ product.price }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
