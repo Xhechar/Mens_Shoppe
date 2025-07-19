@@ -89,8 +89,6 @@ The platform is containerized using Docker for easy deployment. Update the `dock
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the XHR License.
 
 ---
-
-*Feel free to update this README with additional details as your project evolves.*
